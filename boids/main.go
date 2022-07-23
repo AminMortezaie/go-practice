@@ -36,6 +36,9 @@ func (g *Game) Layout(_, _ int) (w, h int) {
 }
 
 func main() {
+	for i := 0; i < boidCount; i++ {
+		createBoid(i)
+	}
 	ebiten.SetWindowSize(screenWidth*2, screenHeight*2)
 	ebiten.SetWindowTitle("Boids in Box")
 	if err := ebiten.RunGame(&Game{}); err != nil {
